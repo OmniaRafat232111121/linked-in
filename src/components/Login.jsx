@@ -1,10 +1,16 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import styled from 'styled-components'
 // import { signInAPi } from '../redux/actions'
 import { connect } from "react-redux";
 import { signInAPI } from '../redux/actions';
+import {useNavigate} from 'react-router-dom'
 const Login = (props) => {
- console.log(props.user)
+  const navigate = useNavigate();
+  useEffect(() => {
+    props.user && navigate("/home");
+  }, [props.user]);
+  console.log(props.user)
+
   return (
     <Container>
        <Nav>
