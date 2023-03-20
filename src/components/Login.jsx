@@ -9,7 +9,7 @@ const Login = (props) => {
   useEffect(() => {
     props.user && navigate("/home");
   }, [props.user]);
-  console.log(props.user)
+ 
 
   return (
     <Container>
