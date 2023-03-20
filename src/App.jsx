@@ -12,7 +12,6 @@ const App = (props) => {
   }, [])
   return (
     <>
-   
       <div className='app'>
       <Router>
       <Routes>

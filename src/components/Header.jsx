@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { signOutAPI } from '../redux/actions';
 
 const Header = (props) => {
-
+   
   return (
     <Container>
     <Content>
@@ -61,12 +61,11 @@ const Header = (props) => {
             </NavList>
             <User>
               <a>
-               {props.user  ?  (
-                    <img src={props.user} />
-               ):
-               (
-                <img src="/images/user.svg" alt="" />
-               )}
+                {props.user && props.user.photoURL ? (
+                  <img src={props.user.photoURL} />
+                ) : (
+                  <img src="/images/user.svg" alt="" />
+                )}
 
                 <span>
                   Me
@@ -295,4 +294,4 @@ const mapDispatchToProps = (dispatch) => {
       signOut: () => dispatch(signOutAPI()),
     };
   };
-  export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
